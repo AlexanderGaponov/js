@@ -12,8 +12,6 @@ let mainList = {
 
 //Цикл for
 
-/*
-
 for (let i = 0; i < 5; i++) {
 	let a = prompt("Какой тип товара будем продавать?");
 	if( (typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50 ) {
@@ -22,21 +20,14 @@ for (let i = 0; i < 5; i++) {
 			mainList.shopGoods[i] = a;
 
 	} else {
-		console.log('Попробуй ещё раз!');
-		let a = prompt("Какой тип товара будем продавать?");	
-		mainList.shopGoods[i] != a;
+		i = i - 1;
 	}
 }
-
-*/
-
 
 
 //Цикл do while
 
-/*
-
-let i = 0;
+/*let i = 0;
 do {
 	let a = prompt("Какой тип товара будем продавать?");
 	mainList.shopGoods[i] = a;
@@ -48,44 +39,41 @@ do {
 				i++;
 
 		} else {
-			console.log('Попробуй ещё раз!');
-			let a = prompt("Какой тип товара будем продавать?");	
-			mainList.shopGoods[i] != a;
+			i = i - 1;
 		}
+	while (i < 5);
 
+}*/
+
+//Цикл while
+
+/*
+let i = 0;
+
+while ( i < 5 ) {
+	let a = prompt("Какой тип товара будем продавать?");
+	mainList.shopGoods[i] = a;
+
+	if( (typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50 ) {
+
+				console.log('Всё верно!');
+				mainList.shopGoods[i] = a;
+				i++;
+
+		}
 }
-
-while(i < 5);
 
 */
 
-//Цикл switch
-
-let i = 0;
-let a = prompt("Какой тип товара будем продавать?");
-
-switch (i) {
-	case 0 : 
-		let a;
-		mainList.shopGoods[i] = a;
-	case 1 : 
-		let a;
-		mainList.shopGoods[i] = a;
-	case 2 : 
-		let a;
-		mainList.shopGoods[i] = a;
-	case 3 : 
-		let a;
-		mainList.shopGoods[i] = a;
-	case 4 : 
-		let a;
-		mainList.shopGoods[i] = a;
-	case 5 : 
-		let a;
-		mainList.shopGoods[i] = a;
-	default:
-		break;
-}
+if (time < 0) {
+	console.log('Такого не может быть');
+} else if (time > 8 && time < 20) {
+	console.log('Время работать!');
+	} else if(time < 24) {
+	console.log('Уже слишком поздно!');
+		} else {
+			console.log('В сутках только 24 часа!');
+		};
 
 alert(mainList.budget / 30);
 
