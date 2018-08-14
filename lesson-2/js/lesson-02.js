@@ -8,7 +8,7 @@ let mainList = {
 		shopGoods: [],
 		employers: {},
 		open: false
- } 
+ }; 
 
 //Цикл for
 
@@ -27,11 +27,11 @@ for (let i = 0; i < 5; i++) {
 
 //Цикл do while
 
-/*let i = 0;
+/*
+let i = 0;
 do {
 	let a = prompt("Какой тип товара будем продавать?");
-	mainList.shopGoods[i] = a;
-
+	
 		if( (typeof(a)) === 'string' && (typeof(a)) != null && a != '' && a.length < 50 ) {
 
 				console.log('Всё верно!');
@@ -41,9 +41,10 @@ do {
 		} else {
 			i = i - 1;
 		}
+	}
 	while (i < 5);
 
-}*/
+*/
 
 //Цикл while
 
@@ -77,4 +78,4 @@ if (time < 0) {
 
 alert(mainList.budget / 30);
 
-console.log(mainList);
+console.log(mainList)
