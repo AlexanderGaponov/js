@@ -25,29 +25,27 @@ let mainList = {
  }; 
 
 //Функция набора сотрудников
-function Employers () {
+function employers () {
 	for(let i = 0; i < 4; i++){
 		let emp = prompt(" Введите фамилию сотрудника:");
 		mainList.employers[i] = emp;
 	}
 }
 
-Employers();
+employers();
 
 
 //Функция дисконтной системы -- Почему не работает? 
 
-function discountSistem (discount) {
+function discountSistem () {
 
-	 let a = prompt("Какая стоимость товара?");
-
-	while (typeof (discount) == true) {
-		price = a;
+	while (mainList.discount == true) {
+		price = prompt("Какая стоимость товара?");;
 		console.log ((price * 80)/100);
 	}
 }
 
-//discountSistem(true);
+//discountSistem();
 
 
 function chooseGoods() { 
@@ -89,4 +87,4 @@ function budgetSizeDay (budget) {
 
 //budgetSizeDay ();
 
-//console.log(mainList);
+//console.log(mainList)
