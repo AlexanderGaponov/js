@@ -39,9 +39,12 @@ employers();
 
 function discountSistem () {
 
-	while (mainList.discount == true) {
-		price = prompt("Какая стоимость товара?");;
+price = prompt("Какая стоимость товара?");
+	
+	if (mainList.discount == true) {
 		console.log ((price * 80)/100);
+	} else {
+		console.log (price);
 	}
 }
 
