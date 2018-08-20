@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Лекция-1</title>
+</head>
+<body>
+<script>
+nextPrime:
+  for (var i = 2; i <= 100; i++) {
+
+    for (var j = 2; j < i; j++) {
+      if (i % j == 0) continue nextPrime;
+    }
+
+    document.write( i + " делитель: " + j + '<br>'); 
+  }
+</script>	
+</body>
+</html>
+
+
