@@ -1,7 +1,8 @@
 let money, 
 		name, 
     time,
-    price; 
+    price,
+    arrItems; 
 
 function start(){
 	 money = prompt("Ваш бюджет?", '');
@@ -32,7 +33,7 @@ for (let i = 0; i < 5; i++) {
 						mainList.shopGoods[i] = a;
 
 				} else {
-					i = i - 1;
+					i = i--;
 				}
 			}
 		},
@@ -46,7 +47,7 @@ for (let i = 0; i < 5; i++) {
 					console.log('Уже слишком поздно!');
 						} else {
 							console.log('В сутках только 24 часа!');
-						};
+						}
 			},
 			dayBudget: function dayBudget () {
 				alert("Ежедневный бюджет" + mainList.budget / 30);
@@ -67,32 +68,40 @@ for (let i = 0; i < 5; i++) {
 					mainList.employers[i] = name;
 				}
 			},
+
+
+			
 			chooseShopItems: function chooseShopItems (){
-				for(let i = 0; i < 5; i++) {
+			
 				
 				let items = prompt("Перечислите через запятую ваши товары","");
 					
-					if ((typeof(items)) === 'string' && (typeof(items)) != null && a != '') {
-						mainList.shopItems[i] = items;
+					while ((typeof(items)) !== 'string' || (typeof(items)) === null || items === '') {
+
+						items = prompt("Перечислите через запятую ваши товары","");
+						} 
+						
 						mainList.shopItems = items.split(",");
 						mainList.shopItems.push(prompt("Подождите, ещё ", ""));
 						mainList.shopItems.sort();
-					} else {
-						i = i - 1;
-					}
-					mainList.shopItems.forEach(function(items, i,mainList.shopItems){
-						console.log('У нас вы можете купить' + items)
-					})
-				}
+							
 			}
- }; 
 
- for (let key in mainList) {
- 		console.log('Наш магазин включает в себя:' + key)
- }
+ };
 
- mainList.chooseShopItems();
+			 mainList.chooseShopItems();
 
-console.log(mainList)
+				mainList.shopItems.forEach(function(item, i,arr){
+										arr[i] = (i + 1) + ' - ' + item
+										arrItems = arr
+									});
+			 alert(arrItems);
+
+
+			 for (let key in mainList) {
+			 		console.log('Наш магазин включает в себя:' + key + ' => ' + mainList[key]);
+			 }
+
+console.log(mainList);
 
 
