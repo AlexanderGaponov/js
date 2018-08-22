@@ -116,6 +116,7 @@ promoCode.addEventListener('change', () => {
 
 	if (promo === 'Tomsk') {
 		discountValue.textContent = "Забирай товар даром!";
+		discountValue.style.backgroundColor = 'green';
 	} else {
 		discountValue.textContent = "Друг, придётся заплатить!";
 	}
