@@ -19,30 +19,29 @@ let openBtn = document.getElementById('open-btn'),
 
 		let money, 
     price,
-    arrItems,
-    shopTitle; 
+    arrItems; 
 
-openBtn.addEventListener('click', () => {
+		goodsItemBtn.disabled = true;
+    countBudgetBtn.disabled = true;
+		hireEmployersBtn.disabled = true;
+
+	openBtn.addEventListener('click', () => {
+	
 	money = prompt("Ваш бюджет?", '');
 
-	 while(isNaN(money) || money == '' || money == null){
-	 	money = prompt("Ваш бюджет?");
+	 while(isNaN(money) || money === '' || money === null){
+	 		money = prompt("Ваш бюджет?");	
 	 }
 
 	 budgetValue.textContent = money;
-	 
-	 //Не работает :(
-	 
-	 shopTitle = prompt("Название вашего магазина?", '');
-	
-	 while((typeof(shopTitle)) === '' || shopTitle === null) {
-			goodsItemBtn.disabled = true;
-   		countBudgetBtn.disabled = true;
-			hireEmployersBtn.disabled = true; 	
-	 }
 
-			nameValue.textContent = shopTitle;
-	 		countBudgetValue.setAttribute('readonly', 'readonly');
+	 	goodsItemBtn.disabled = false;
+    countBudgetBtn.disabled = false;
+		hireEmployersBtn.disabled = false;
+	 
+	 nameValue.textContent = prompt("Название вашего магазина?", '').toUpperCase();
+	
+	 	countBudgetValue.setAttribute('readonly', 'readonly');
 
 	 });
 
@@ -93,10 +92,7 @@ timeValue.addEventListener('change', () =>{
 	if(mainList.open == true){
 		isopenValue.style.backgroundColor = 'green';
 	} else {
-		isopenValue.style.backgroundColor = 'red';
-		goodsItemBtn.disabled = true;
-   	countBudgetBtn.disabled = true;
-		hireEmployersBtn.disabled = true;  
+		isopenValue.style.backgroundColor = 'red'; 
 	}
 });
 
