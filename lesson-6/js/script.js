@@ -21,6 +21,7 @@ let openBtn = document.getElementById('open-btn'),
     price,
     arrItems; 
 
+    promoCode.disabled = true;
 		goodsItemBtn.disabled = true;
     countBudgetBtn.disabled = true;
 		hireEmployersBtn.disabled = true;
@@ -35,6 +36,7 @@ let openBtn = document.getElementById('open-btn'),
 
 	 budgetValue.textContent = money;
 
+	 	promoCode.disabled = false;
 	 	goodsItemBtn.disabled = false;
     countBudgetBtn.disabled = false;
 		hireEmployersBtn.disabled = false;
