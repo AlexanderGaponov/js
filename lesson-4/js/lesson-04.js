@@ -92,8 +92,8 @@ for (let i = 0; i < 5; i++) {
 			 mainList.chooseShopItems();
 
 				mainList.shopItems.forEach(function(item, i,arr){
-										arr[i] = (i + 1) + ' - ' + item
-										arrItems = arr
+										arr[i] = (i + 1) + ' - ' + item;
+										arrItems = arr;
 									});
 			 alert(arrItems);
 
