@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Clock</title>
+</head>
+
+<body onload="startTime()">
+	<h1 align="center">Текущее время</h1>
+    <div class="clock" align="center" style="font-size: 50px"></div>
+
+    <script>
+    function startTime() {
+        let date = new Date(),
+            hours = ('0' + date.getHours()).slice(-2),
+            minutes = ('0' + date.getMinutes()).slice(-2),
+            seconds = ('0' + date.getSeconds()).slice(-2);
+            
+        document.querySelector('.clock').innerHTML = hours + ":" + minutes + ":" + seconds
+        time = setTimeout('startTime()', 1000);
+    }
+    </script>
+</body>
+
+</html>

@@ -75,12 +75,10 @@ window.addEventListener('DOMContentLoaded', function() {
             };
 
             if (t.total <= 0) {
-
-                clearInterval(timeInterval);
                 hours.innerHTML = '00';
                 minutes.innerHTML = '00';
                 seconds.innerHTML = '00';
-                
+                clearInterval(timeInterval);
             }
         };
         updateClock();
