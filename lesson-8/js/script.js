@@ -84,12 +84,13 @@ window.addEventListener('DOMContentLoaded', function() {
                 
             }
         };
-       
-        updateClock();
+        
         let timeInterval = setInterval(updateClock, 1000);
+        updateClock();
     };
 
     setClock('timer', deadline);
+
 
 //Modal
     let more = document.querySelector('.more'),

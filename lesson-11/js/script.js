@@ -81,8 +81,10 @@ window.addEventListener('DOMContentLoaded', () => {
                 clearInterval(timeInterval);
             }
         };
-        updateClock();
+        
         let timeInterval = setInterval(updateClock, 1000);
+        updateClock();
+        
     };
 
     setClock('timer', deadline);
