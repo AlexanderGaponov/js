@@ -118,10 +118,10 @@ window.addEventListener('DOMContentLoaded', () => {
     
     //FORM
 
-    let message = new Object();
+    /*let message = new Object();
     message.loading = '<img src="img/ajax-loader.gif">';
     message.success = '<img src="img/soon.png">'; 
-    message.failure = '<img src="img/cancel.png"><img src="img/cancel.png"><img src="img/cancel.png">';
+    message.failure = '<img src="img/cancel.png"><img src="img/cancel.png"><img src="img/cancel.png">';*/
 
     let form = document.getElementsByClassName('main-form')[0],
         input = form.getElementsByTagName('input'),
@@ -266,7 +266,7 @@ window.addEventListener('DOMContentLoaded', () => {
          persons.addEventListener('change', function(){
             personSum = +this.value;
             total = (daysSum + personSum) * 4000;
-            if (restDays.value == ''){
+            if (restDays.value == '' || persons.value == ''){
                 totalValue.innerHTML = 0;
             } else {
                 totalValue.innerHTML = total;
@@ -276,7 +276,7 @@ window.addEventListener('DOMContentLoaded', () => {
          restDays.addEventListener('change', function(){
             daysSum = +this.value;
             total = (daysSum + personSum) * 4000;
-            if (persons.value == ''){
+            if (persons.value == '' || restDays.value == ''){
                 totalValue.innerHTML = 0;
             } else {
                 totalValue.innerHTML = total;
