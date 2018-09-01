@@ -1,5 +1,5 @@
 function timer() {
-    let deadline = '2018-09-1';
+    let deadline = '2018-09-24';
 
     let getTimeRemaining = endtime => {
         let t = Date.parse(endtime) - Date.parse(new Date()),

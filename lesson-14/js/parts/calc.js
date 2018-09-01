@@ -12,7 +12,7 @@ let persons = document.getElementsByClassName('counter-block-input')[0],
          persons.addEventListener('change', function(){
             personSum = +this.value;
             total = (daysSum + personSum) * 4000;
-            if (restDays.value == ''){
+            if (persons.value == '' || restDays.value == '' || persons.value == 0 || restDays.value == 0 ){
                 totalValue.innerHTML = 0;
             } else {
                 totalValue.innerHTML = total;
@@ -22,7 +22,7 @@ let persons = document.getElementsByClassName('counter-block-input')[0],
          restDays.addEventListener('change', function(){
             daysSum = +this.value;
             total = (daysSum + personSum) * 4000;
-            if (persons.value == ''){
+            if (persons.value == '' || restDays.value == '' || persons.value == 0 || restDays.value == 0 ){
                 totalValue.innerHTML = 0;
             } else {
                 totalValue.innerHTML = total;
@@ -30,7 +30,7 @@ let persons = document.getElementsByClassName('counter-block-input')[0],
          });
 
          place.addEventListener('change', function(){
-            if(restDays.value == '' || persons.value == ''){
+            if(persons.value == '' || restDays.value == '' || persons.value == 0 || restDays.value == 0 ){
                 totalValue.innerHTML = 0;
             } else {
                 let a = total;

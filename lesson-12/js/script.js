@@ -266,7 +266,7 @@ window.addEventListener('DOMContentLoaded', () => {
          persons.addEventListener('change', function(){
             personSum = +this.value;
             total = (daysSum + personSum) * 4000;
-            if (restDays.value == '' || persons.value == ''){
+            if (persons.value == '' || restDays.value == '' || persons.value == 0 || restDays.value == 0 ){
                 totalValue.innerHTML = 0;
             } else {
                 totalValue.innerHTML = total;
@@ -276,7 +276,7 @@ window.addEventListener('DOMContentLoaded', () => {
          restDays.addEventListener('change', function(){
             daysSum = +this.value;
             total = (daysSum + personSum) * 4000;
-            if (persons.value == '' || restDays.value == ''){
+            if (persons.value == '' || restDays.value == '' || persons.value == 0 || restDays.value == 0 ){
                 totalValue.innerHTML = 0;
             } else {
                 totalValue.innerHTML = total;
@@ -284,7 +284,7 @@ window.addEventListener('DOMContentLoaded', () => {
          });
 
          place.addEventListener('change', function(){
-            if(restDays.value == '' || persons.value == ''){
+            if(restDays.value == '' || persons.value == '' || persons.value == 0 || restDays.value == 0){
                 totalValue.innerHTML = 0;
             } else {
                 let a = total;
