@@ -150,7 +150,7 @@ function modal() {
         descriptionBtn = document.querySelectorAll('.description-btn'),
         close = document.querySelector('.popup-close');
 
-    for (i = 0; i < descriptionBtn.length; i++) {
+    for (var i = 0; i < descriptionBtn.length; i++) {
         descriptionBtn[i].addEventListener('click', function () {
             this.classList.add('more-splash');
             overlay.style.display = 'block';
