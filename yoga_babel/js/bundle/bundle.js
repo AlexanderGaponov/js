@@ -21,6 +21,7 @@ timer();
 'use strict';
 
 function ajax() {
+    let message = new Object();
 
     var form = document.getElementsByClassName('main-form')[0],
         input = form.getElementsByTagName('input'),
@@ -147,16 +148,19 @@ module.exports = calc;
 function modal() {
     var more = document.querySelector('.more'),
         overlay = document.querySelector('.overlay'),
-        descriptionBtn = document.querySelectorAll('.description-btn'),
+        moreDescription = document.getElementById('about'),
         close = document.querySelector('.popup-close');
 
-    for (var i = 0; i < descriptionBtn.length; i++) {
-        descriptionBtn[i].addEventListener('click', function () {
+    
+        moreDescription.addEventListener('click', function (event) {
+         var e = event.target.matches('div.description-btn');
+         if (e == true) {   
             this.classList.add('more-splash');
             overlay.style.display = 'block';
             document.body.style.overflow = 'hidden';
+        }
         });
-    }
+    
 
     more.addEventListener('click', function () {
         this.classList.add('more-splash');
