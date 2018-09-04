@@ -111,22 +111,22 @@ function calc() {
     totalValue.innerHTML = 0;
 
     persons.addEventListener('change', function () {
-        personSum = +place.value;
+        personSum = +this.value;
         total = (daysSum + personSum) * 4000;
         if (persons.value == '' || restDays.value == '' || persons.value == 0 || restDays.value == 0) {
             totalValue.innerHTML = 0;
         } else {
-            totalValue.innerHTML = total
+            totalValue.innerHTML = total * place.options[place.selectedIndex].value
         }
     });
 
     restDays.addEventListener('change', function () {
-        daysSum = +place.value;
+        daysSum = +this.value;
         total = (daysSum + personSum) * 4000;
         if (persons.value == '' || restDays.value == '' || persons.value == 0 || restDays.value == 0) {
             totalValue.innerHTML = 0;
         } else {
-            totalValue.innerHTML = total
+            totalValue.innerHTML = total * place.options[place.selectedIndex].value
         }
     });
 
