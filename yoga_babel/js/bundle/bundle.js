@@ -111,22 +111,22 @@ function calc() {
     totalValue.innerHTML = 0;
 
     persons.addEventListener('change', function () {
-        personSum = +this.value;
+        personSum = +place.value;
         total = (daysSum + personSum) * 4000;
         if (persons.value == '' || restDays.value == '' || persons.value == 0 || restDays.value == 0) {
             totalValue.innerHTML = 0;
         } else {
-            totalValue.innerHTML = total;
+            totalValue.innerHTML = total
         }
     });
 
     restDays.addEventListener('change', function () {
-        daysSum = +this.value;
+        daysSum = +place.value;
         total = (daysSum + personSum) * 4000;
         if (persons.value == '' || restDays.value == '' || persons.value == 0 || restDays.value == 0) {
             totalValue.innerHTML = 0;
         } else {
-            totalValue.innerHTML = total;
+            totalValue.innerHTML = total
         }
     });
 
@@ -135,7 +135,7 @@ function calc() {
             totalValue.innerHTML = 0;
         } else {
             var a = total;
-            totalValue.innerHTML = a * this.options[this.selectedIndex].value;
+            totalValue.innerHTML = a * this.options[this.selectedIndex].value
         }
     });
 }

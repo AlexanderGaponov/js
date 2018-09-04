@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+
+<body>
+    <div id="mocha"></div>
+    <link href="https://cdn.rawgit.com/mochajs/mocha/2.2.5/mocha.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/5.2.0/mocha.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.1.2/chai.min.js"></script>
+    <script>
+    mocha.setup('bdd');
+    let assert = chai.assert;
+    </script>
+    <script src="test.js"></script>
+    <script src="script.js"></script>
+    <script>
+    mocha.run()
+    </script>
+</body>
+
+</html>
