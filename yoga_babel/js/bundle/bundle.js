@@ -153,9 +153,8 @@ function modal() {
 
     
         moreDescription.addEventListener('click', function (event) {
-         var e = event.target.matches('div.description-btn');
-         if (e == true) {   
-            this.classList.add('more-splash');
+         var target = event.target;
+         if (target.className == 'description-btn') {   
             overlay.style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
