@@ -22,6 +22,9 @@ timer();
 
 function ajax() {
     let message = new Object();
+    message.loading = 'загрузка';
+    message.success = 'спасибо, с вами свяжутся';
+    message.failure = 'что-то пошло не так, попробуйте позже';
 
     var form = document.getElementsByClassName('main-form')[0],
         input = form.getElementsByTagName('input'),
