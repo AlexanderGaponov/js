@@ -305,6 +305,15 @@ textarea:focus {
   margin-top: 2rem;
 }
 /*glazing*/
+
+.hide{
+ display: none; 
+}
+
+/* .show{
+  display: flex;
+} */
+
 .glazing {
   padding: 8rem 0;
 }

@@ -35,7 +35,47 @@ let phoneLinkHeader = document.querySelectorAll('.phone_link')[0],
 
 //3. form ajax
 
-//4. Tabs
+//4. Tabs_glazing
+let glazingTab = document.getElementsByClassName('slider_link'),
+		glazingContent = document.getElementsByClassName('glazing_content'),
+		glazingSlider = document.getElementsByClassName('glazing_slider')[0];
+
+		function hideGlazingContent(a){
+			for (let i = a; i < glazingContent; i++){
+					glazingContent[i].classList.remove('show');
+					glazingContent[i].classList.add('hide');
+			}
+		} 
+
+		hideGlazingContent(1);
+
+		function showGlazingContent(b) {
+			if(glazingContent[b].classList.contains('hide')){
+				hideGlazingContent(0);
+				glazingContent[b].classList.remove('hide');
+				glazingContent[b].classList.add('show');
+			}
+		}
+
+		glazingSlider.addEventListener('click', function(event) {
+			let target = event.target;
+			if(target.className == 'slider_link') {
+				for(let i = 0; i < glazingTab.lenght; i++) {
+					if(target == glazingTab[i]) {
+						showGlazingContent(i);
+						break;
+					}
+				}
+			};
+		});
+
+
+
+
+
+
+
+
 
 //5. Modal popup_calc
 let priceBtnOne = document.querySelectorAll('.glazing_price_btn')[0],
@@ -55,9 +95,44 @@ let priceBtnOne = document.querySelectorAll('.glazing_price_btn')[0],
 		popupCalc.style.display = "none";
 		});
 
-//Tabs
-
 //Timer
+function CountdownTimer(elm,tl,mes){
+ this.initialize.apply(this,arguments);
+}
+CountdownTimer.prototype={
+ initialize:function(elm,tl,mes) {
+  this.elem = document.getElementById(elm);
+  this.tl = tl;
+  this.mes = mes;
+ },countDown:function(){
+  var timer='';
+  var today=new Date();
+  var day=Math.floor((this.tl-today)/(24*60*60*1000));
+  var hour=Math.floor(((this.tl-today)%(24*60*60*1000))/(60*60*1000));
+  var min=Math.floor(((this.tl-today)%(24*60*60*1000))/(60*1000))%60;
+  var sec=Math.floor(((this.tl-today)%(24*60*60*1000))/1000)%60%60;
+  var me=this;
+
+  if( ( this.tl - today ) > 0 ){
+   timer += '<span class="number-wrapper"><div class="line"></div><div class="caption">дней</div><span class="number day">'+day+'</span></span>';
+   timer += '<span class="number-wrapper"><div class="line"></div><div class="caption">часов</div><span class="number hour">'+hour+'</span></span>';
+   timer += '<span class="number-wrapper"><div class="line"></div><div class="caption">минут</div><span class="number min">'+this.addZero(min)+'</span></span><span class="number-wrapper"><div class="line"></div><div class="caption">секунд</div><span class="number sec">'+this.addZero(sec)+'</span></span>';
+   this.elem.innerHTML = timer;
+   tid = setTimeout( function(){me.countDown();},10 );
+  }else{
+   this.elem.innerHTML = this.mes;
+   return;
+  }
+ },addZero:function(num){ return ('0'+num).slice(-2); }
+}
+function CDT(){
+	var tl = new Date('07/08/2019 00:00:00');
+	var timer = new CountdownTimer('CDT',tl,'<span class="number-wrapper"><div class="line"></div><span class="number end">Время вышло!</span></span>');
+	 timer.countDown();
+	}
+	window.onload=function(){
+	 CDT();
+	}
 
 //Photos
 
